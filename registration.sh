@@ -12,6 +12,12 @@ proof=$(curl -s -X POST -H 'Content-Type: application/json' \
 -d '{"jsonrpc":"2.0","method":"node_getArchiveSiblingPath","params":["'$block'","'$block'"],"id":67}' \
 http://localhost:8080 | jq -r ".result")
 
-echo address: $WALLET
-echo block: $block
-echo proof: $proof
+echo address: 
+echo $WALLET
+echo
+echo block: 
+echo $block
+echo
+echo proof: 
+$proof
+echo
