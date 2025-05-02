@@ -8,6 +8,7 @@ case $c in y|Y) ;; *) exit ;; esac
 #install 
 cd /root
 bash -i <(curl -s https://install.aztec.network)
+aztec-up alpha-testnet
 
 #create env
 cd $path
