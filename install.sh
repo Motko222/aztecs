@@ -34,6 +34,7 @@ LimitNPROC=4096
 StandardOutput=journal
 StandardError=journal
 SyslogIdentifier=$folder
+WorkingDirectory=/root/.aztec
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/$folder.service
