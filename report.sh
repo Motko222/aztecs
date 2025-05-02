@@ -19,8 +19,7 @@ cat >$json << EOF
   "updated":"$(date --utc +%FT%TZ)",
   "measurement":"report",
   "tags": {
-       "project":"$folder",
-       "id":"$ID",
+       "id":"folder-$ID",
        "machine":"$MACHINE",
        "grp":"node",
        "owner":"$OWNER"
