@@ -2,9 +2,6 @@ path=$(cd -- $(dirname -- "${BASH_SOURCE[0]}") && pwd)
 folder=$(echo $path | awk -F/ '{print $NF}')
 source $path/env
 
-read -p "Sure? " c
-case $c in y|Y) ;; *) exit ;; esac
-
 #install 
 cd /root
 bash -i <(curl -s https://install.aztec.network)
