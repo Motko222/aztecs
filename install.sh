@@ -5,8 +5,8 @@ source $path/env
 #install 
 cd /root
 bash -i <(curl -s https://install.aztec.network)
-source /root/.bash_profile
-aztec-up alpha-testnet
+cd /root/.aztec/bin
+./aztec-up alpha-testnet
 
 #create env
 cd $path
