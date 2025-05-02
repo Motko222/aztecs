@@ -5,9 +5,9 @@ source $path/env
 read -p "Sure? " c
 case $c in y|Y) ;; *) exit ;; esac
 
-#install binary
+#install 
 cd /root
-# add install cmds here
+bash -i <(curl -s https://install.aztec.network)
 
 #create env
 cd $path
@@ -24,7 +24,7 @@ Wants=network-online.target
 EnvironmentFile=/root/scripts/$folder/env
 User=root
 Group=root
-ExecStart=$folder
+ExecStart=/root/scripts/$folder/start-cli.sh
 Restart=always
 RestartSec=30
 LimitNOFILE=65536
@@ -32,7 +32,6 @@ LimitNPROC=4096
 StandardOutput=journal
 StandardError=journal
 SyslogIdentifier=$folder
-WorkingDirectory=/root/$folder
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/$folder.service
