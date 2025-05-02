@@ -5,7 +5,8 @@ folder=$(echo $path | awk -F/ '{print $NF}')
 source /root/.bash_profile
 source $path/env
 
-aztec start --node --archiver --sequencer \
+cd /root/.aztec/bin
+./aztec start --node --archiver --sequencer \
   --network alpha-testnet \
   --l1-rpc-urls $RPC  \
   --l1-consensus-host-urls $BEACON \
