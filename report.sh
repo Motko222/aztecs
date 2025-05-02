@@ -9,10 +9,10 @@ source $path/env
 version=$(aztec -V | sed 's/\r//g')
 service=$(sudo systemctl status $folder --no-pager | grep "active (running)" | wc -l)
 errors=$(journalctl -u $folder.service --since "1 hour ago" --no-hostname -o cat | grep -c -E "rror|ERR")
-block=$(curl -s -X POST -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","method":"node_getL2Tips","params":[],"id":67}' http://localhost:8080 | jq -r ".result.proven.number")
+latest=$(curl -s -X POST -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","method":"node_getL2Tips","params":[],"id":67}' http://localhost:8080 | jq -r ".result.latest.number")
 
-status="ok" && message="block=$block"
-[ $errors -gt 500 ] && status="warning" && message="block=$block errors=$errors";
+status="ok" && message="latest=$latest"
+[ $errors -gt 500 ] && status="warning" && message="latest=$latest errors=$errors";
 [ $service -ne 1 ] && status="error" && message="service not running";
 
 cat >$json << EOF
@@ -34,7 +34,8 @@ cat >$json << EOF
         "service":$service,
         "errors":$errors,
         "url":"$RPC $BEACON",
-        "balance":"$balance"
+        "balance":"$balance",
+        "latest":"$latest"
   }
 }
 EOF
