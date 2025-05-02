@@ -9,7 +9,7 @@ block=$(curl -s -X POST -H 'Content-Type: application/json' \
 http://localhost:8080 | jq -r ".result.proven.number")
 
 proof=$(curl -s -X POST -H 'Content-Type: application/json' \
--d '{"jsonrpc":"2.0","method":"node_getArchiveSiblingPath","params":["$block","$block"],"id":67}' \
+-d '{"jsonrpc":"2.0","method":"node_getArchiveSiblingPath","params":["'$block'","'$block'"],"id":67}' \
 http://localhost:8080 | jq -r ".result")
 
 echo address: $WALLET
