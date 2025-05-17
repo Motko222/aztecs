@@ -16,8 +16,8 @@ aztec add-l1-validator \
   --proposer-eoa $WALLET \
   --staking-asset-handler 0xF739D03e98e23A7B65940848aBA8921fF3bAc4b2 \
   --l1-chain-id 11155111 | head -10
-
-  echo $(date --utc +%FT%TZ) attempt 2
+sleep 1s
+echo $(date --utc +%FT%TZ) attempt 2
 aztec add-l1-validator \
   --l1-rpc-urls $RPC \
   --private-key $PK \
@@ -25,8 +25,8 @@ aztec add-l1-validator \
   --proposer-eoa $WALLET \
   --staking-asset-handler 0xF739D03e98e23A7B65940848aBA8921fF3bAc4b2 \
   --l1-chain-id 11155111 | head -10
-
-  echo $(date --utc +%FT%TZ) attempt 3
+sleep 1s
+echo $(date --utc +%FT%TZ) attempt 3
 aztec add-l1-validator \
   --l1-rpc-urls $RPC \
   --private-key $PK \
