@@ -31,3 +31,4 @@ fi
 
 rpc2=$(echo $rpc | sed 's/\//\\\//g')
 sed -i 's/^RPC.*/RPC="'$rpc2'"/' env
+bash start-service.sh
