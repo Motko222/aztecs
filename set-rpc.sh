@@ -5,7 +5,8 @@ folder=$(echo $path | awk -F/ '{print $NF}')
 cd $path
 source $path/env
 
-if [ -z $1 ] then
+if [ -z $1 ] 
+then
  c=$(cat rpc | wc -l)
  echo "------------------------"
  for (( i=1;i<=$c;i++ ))
