@@ -7,7 +7,7 @@ source /root/.bash_profile
 log=/root/logs/aztec-validator-add-output
 msg=/root/logs/aztec-validator-add-message
 
-echo $MACHINE >$msg
+echo $MACHINE $folder >$msg
 echo $(date --utc +%FT%TZ) starting script with delay $DELAY >>$msg
 sleep $DELAY
 
