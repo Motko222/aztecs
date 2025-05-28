@@ -10,7 +10,6 @@ log=/root/logs/aztec-validator-add
 echo $(date --utc +%FT%TZ) started, waiting $DELAY
 sleep $DELAY
 
-echo $(date --utc +%FT%TZ) attempt 1
 response=$(aztec add-l1-validator \
   --l1-rpc-urls $RPC \
   --private-key $PK \
