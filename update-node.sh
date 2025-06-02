@@ -3,4 +3,4 @@ folder=$(echo $path | awk -F/ '{print $NF}')
 source $path/env
 
 cd /root/.aztec/bin
-./aztec-up alpha-testnet
+./aztec-up latest
