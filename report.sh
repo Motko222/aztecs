@@ -39,7 +39,9 @@ cat >$json << EOF
         "url2":"$peerid",
         "balance":"$balance",
         "height":"$latest",
-        "m1":""
+        "wallet":"$WALLET",
+        "wkey":""
+        
   }
 }
 EOF
