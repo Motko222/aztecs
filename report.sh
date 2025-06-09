@@ -34,10 +34,12 @@ cat >$json << EOF
         "message":"$message",
         "service":$service,
         "errors":$errors,
-        "url":"$RPC $BEACON $peerid",
+        "url":"$RPC",
+        "url1":"$BEACON",
+        "url2":"$peerid",
         "balance":"$balance",
-        "latest":"$latest",
-        "peerid":"$peerid"
+        "height":"$latest",
+        "m1":""
   }
 }
 EOF
