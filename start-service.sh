@@ -5,4 +5,4 @@ folder=$(echo $path | awk -F/ '{print $NF}')
 
 systemctl restart $folder.service
 sleep 2s
-journalctl -n 200 -u $folder.service -f --no-hostname -o cat
+journalctl -n 5 -u $folder.service -f --no-hostname -o cat
