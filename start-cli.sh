@@ -10,6 +10,6 @@ cd /root/.aztec/bin
   --network alpha-testnet \
   --l1-rpc-urls $RPC  \
   --l1-consensus-host-urls $BEACON \
-  --sequencer.validatorPrivateKey $PK \
+  --sequencer.validatorPrivateKeys $PK \
   --sequencer.coinbase $WALLET \
   --p2p.p2pIp $IP
