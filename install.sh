@@ -6,7 +6,7 @@ source $path/env
 cd /root
 bash -i <(curl -s https://install.aztec.network)
 cd /root/.aztec/bin
-./aztec-up 1.1.2
+./aztec-up latest
 
 #create env
 cd $path
