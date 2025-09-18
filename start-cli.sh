@@ -7,7 +7,7 @@ source $path/env
 
 cd /root/.aztec/bin
 ./aztec start --node --archiver --sequencer \
-  --network alpha-testnet \
+  --network testnet \
   --l1-rpc-urls $RPC  \
   --l1-consensus-host-urls $BEACON \
   --sequencer.validatorPrivateKeys $PK \
