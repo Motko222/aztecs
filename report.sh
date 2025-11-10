@@ -37,10 +37,9 @@ cat >$json << EOF
         "url":"$RPC",
         "url1":"$BEACON",
         "url2":"$peerid",
-        "balance":"$balance",
+        "m1":"",
         "height":"$latest",
-        "wallet":"$WALLET",
-        "wkey":""
+        "wallet":"attester=$ETH_ATTESTER_ADDRESS owner=$WALLET"
         
   }
 }
