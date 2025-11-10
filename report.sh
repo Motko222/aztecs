@@ -12,9 +12,6 @@ errors=$(journalctl -u $folder.service --since "1 hour ago" --no-hostname -o cat
 latest=$(curl -s -X POST -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","method":"node_getL2Tips","params":[],"id":67}' http://localhost:8080 | jq -r ".result.latest.number")
 peerid=$(docker logs $(docker ps -q --filter ancestor=aztecprotocol/aztec:latest | head -n 1) 2>&1 | grep -i "peerId" | grep -o '"peerId":"[^"]*"' | cut -d'"' -f4 | head -n 1)
 
-
-state=$(journalctl -u $folder.service --no-hostname -o cat | grep "World state updated with L2 block " | tail -1 | awk -F "World state updated with L2 block " '{print $2}' | awk '{print $$1}')
-
 status="ok" && message=""
 [ $errors -gt 500 ] && status="warning" && message="too many errors ($errors/h)";
 [ $service -ne 1 ] && status="error" && message="service not running";
@@ -40,7 +37,7 @@ cat >$json << EOF
         "url":"$RPC",
         "url1":"$BEACON",
         "url2":"$peerid",
-        "m1":"",
+        "m1":"height=$latest",
         "height":"$latest",
         "wallet":"attester=$ETH_ATTESTER_ADDRESS owner=$WALLET"
         
