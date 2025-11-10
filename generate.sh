@@ -1,1 +1,2 @@
 aztec validator-keys new --fee-recipient 0x0000000000000000000000000000000000000000000000000000000000000000
+cat /root/.aztec/keystore/key1.json
