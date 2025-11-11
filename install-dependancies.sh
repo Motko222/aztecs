@@ -21,7 +21,11 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Test Docker
-sudo docker run hello-world
+#sudo docker run hello-world
+
+curl -L https://foundry.paradigm.xyz | bash
+source /root/.bashrc
+foundryup
 
 sudo systemctl enable docker
 sudo systemctl restart docker
